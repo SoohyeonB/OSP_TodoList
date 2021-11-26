@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import App from './src/App';
+// export default App;
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+/*
+* 임시 main 화면 - 수현
+* */
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import React from "react";
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from "@react-navigation/drawer";
+
+import HomeScreen from '../screens/HomeScreen';
+import MyPageScreen from '../screens/MyPageScreen';
+import {DrawerContent} from './screens/DrawerContent';
+
+
+import {
+    SafeAreaView,
+    StyleSheet,
+    ScrollView,
+    View,
+    Text,
+    Button,
+    StatusBar,
+} from 'react-native';
+
+
+
+const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const App =()=> {
+    return(
+        //오른쪽으로 밀면 나오는 navigator
+        <NavigationContainer>
+            <Drawer.Navigator drawerContent={props => <DrawerContent {...props}/>}>
+                <Drawer.Screen name="Home" component={MyPageScreen}/>
+            </Drawer.Navigator>
+        </NavigationContainer>
+    );
+};
+
+export default App;
+
