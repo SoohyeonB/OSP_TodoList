@@ -13,7 +13,7 @@ Todo list application 개발
 - [ ] 모든/특정한 to-do 선택/선택해제 Select/deselect specific/all to-do items
 - [ ] 모든/특정한 to-do 삭제 Delete specific/all to-do items
 - [ ] [Special] Dark mode
-- [ ] [Special] ...login
+- [ ] [Special] Login, mypage
 
 ## Intermidiate
 - [ ] 투두 순서 바꾸기 (꾹 누르면 바꿀 수 있게) Change the order of to-do items
