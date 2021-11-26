@@ -4,6 +4,7 @@ import styled, {ThemeProvider} from 'styled-components/native';
 import {theme} from './theme';
 import {StatusBar} from 'react-native';
 
+
 const Container = styled.SafeAreaView`
  flex: 1;
  background-color: ${({theme})=> theme.background};

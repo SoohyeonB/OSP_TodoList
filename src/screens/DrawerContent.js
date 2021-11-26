@@ -6,6 +6,7 @@ import {DrawerContentScrollView,
         DrawerItem
 } from '@react-navigation/drawer';
 
+
 export function DrawerContent(props){
     return(
         <View>
