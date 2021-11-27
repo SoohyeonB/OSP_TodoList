@@ -1,35 +1,53 @@
 /*src/App.js*/
-import React, {useState} from 'react';
-import styled, {ThemeProvider} from 'styled-components/native';
-import {theme} from './theme';
-import {StatusBar} from 'react-native';
 
+import React from 'react';
+import styled from 'styled-components/native';
+import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
+import {NavigationContainer, useTheme} from '@react-navigation/native';
+import StackNavigation from './navigations/AppStack';
 
-const Container = styled.SafeAreaView`
- flex: 1;
- background-color: ${({theme})=> theme.background};
- align-items: center;
- justify-content: flex-start;
- `;
-
-const Title = styled.Text`
-    font-size: 40px;
-    font-weight: 600;
-    color: ${({theme}) => theme.main};
-    align-self: flex-start;
-    margin: 20px;
+const Container=styled.View`
+    flex:1;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
 `;
 
-export default function App(){
+const StyledText=styled.Text`
+font-size:30px;
+margin-bottom:10px;
+`
+const App =()=>{
     return (
-        <ThemeProvider theme={theme}>
-            <Container>
-                <StatusBar
-                    barStyle = "light-content"
-                    backgroundColor={theme.background}
-                    />
-                <Title>Main Page</Title>
-            </Container>
-        </ThemeProvider>
+        <NavigationContainer>
+            <StackNavigation/>
+        </NavigationContainer>
     );
-}
+};
+
+//스타일 연결
+// const App =({navigation})=>{
+//     return (
+//         <View style={styles.container}>
+//             <Button
+//                 title="Go to Profile screen"
+//                 onPress={() => navigation.navigate("Profile")}
+//             />
+//         </View>
+//         //     <Container>
+//         //     <StyledText>main</StyledText>
+//         //     <Button title="go to the profile Screen"
+//         //     onPress={() => navigation.navigate('Profile')}/>
+//         // </Container>
+//     );
+// };
+
+export default App;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+});
