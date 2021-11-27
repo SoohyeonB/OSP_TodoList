@@ -1,7 +1,7 @@
 # To Do List
 
 Open Sw Platform 2021-2 수업\
-Team 2\
+Team 2 repository입니다.\
 Todo list application 개발
 
 
